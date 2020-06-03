@@ -8,23 +8,36 @@
 </head>
 <body>
     <section class="background">
-        <header>
-            <h1 class="title">기억 카드</h1>
-            <button class="add-card-btn">+ 카드 추가</button>
-        </header>
-        <article class="main-area">
+        <article class="main-area" id="mainArea">
+            <header class="main-header">
+                <h1 class="title">기억 카드</h1>
+                <button class="add-card-btn" id="addCardBtn">+ 새로운 카드 추가</button>
+            </header>
             <div class="card"></div>
             <div class="card_ctr">
                 <span class="ctr_pre"><-</span>
                 <span class="page">0/0</span>
                 <span class="ctr_next">-></span>
             </div>
+            <footer>
+                <button class="clear-btn" id="clearBtn">
+                    ✖ 카드삭제
+                </button>
+            </footer>
         </article>
-        <footer>
-            <button class="clear-btn" id="clearBtn">
-                ✖ 카드삭제
-            </button>
-        </footer>
+        <section class="add-modal" id="addModal">
+            <header class="modal-header">
+                <h1 class="ModalTitle">새 카드 추가</h1>
+                <span class="close-modal-btn" id="closeModalBtn">✖</span>
+            </header>
+            <form action="" class="add-form" id="addForm">
+                <h2 class="question">질문</h2>
+                <input type="text" class="modal-input" id="inputQ">
+                <h3 class="answer">답</h3>
+                <input type="text" class="modal-input" id="inputA">
+                <input type="submit" value="+ 카드 추가" class="modal-submit" id="modalSubmit"> 
+            </form>
+        </section>
     </section>
     <script src="script.js"></script>
 </body>

@@ -12,7 +12,7 @@ body{
     align-items: center;
 }
 
-header{
+.main-header{
     width: 300px;
     display: flex;
     justify-content: space-between;
@@ -46,12 +46,12 @@ header{
     top: 30px;
 }
 
-.add-card-btn{
+.add-card-btn,.modal-submit{
     height: 30px;
     cursor: pointer;
     background-color: white;
     border: solid 1px black;
-    outline: none;
+    
 }
 
 footer{
@@ -67,4 +67,74 @@ footer{
     border: solid 1px black;
     outline: none;
     cursor: pointer;
+}
+
+.add-modal{
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F1EC;
+    position: absolute;
+    z-index: -1;
+}
+
+.ModalTitle{
+    padding:0;
+    margin: 0 20px 0 0;
+    font-size: 35px;
+}
+
+.close-modal-btn{
+    display: flex;
+    align-items: center;
+}
+
+.modal-header{
+    display: flex;
+}
+
+.close-modal-btn{
+    cursor: pointer;
+}
+
+.add-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input{
+    width: 400px;
+    height: 50px;
+}
+
+.modal-submit{
+    width: 30%;
+    position: relative;
+    left: 145px;
+    top: 30px;
+}
+
+@keyframes showWindow{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes hideWindow{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
 }
