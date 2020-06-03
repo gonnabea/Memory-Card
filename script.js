@@ -14,13 +14,19 @@ preCardBtn = document.getElementById("preCardBtn"),
 nextCardBtn = document.getElementById("nextCardBtn"),
 clearBtn = document.getElementById("clearBtn")
 
-let frontContents = [];
-let backContents = [];
-let cardIndex = 0;
+let frontContents = JSON.parse(localStorage.getItem("frontContents")) || [];
+let backContents = JSON.parse(localStorage.getItem("backContents")) || [];
+let cardIndex = JSON.parse(localStorage.getItem("cardIndex")) || 0;
 let currentIndex = 0;
 
+function save(){
+    localStorage.setItem("frontContents", JSON.stringify(frontContents))
+    localStorage.setItem("backContents", JSON.stringify(backContents));
+    localStorage.setItem("cardIndex", cardIndex);
+}
+
 function handlePage(){
-    page.innerHTML = `${currentIndex} / ${cardIndex}`
+        page.innerHTML = `${currentIndex} / ${cardIndex}`
 }
 
 function showModal(){
@@ -45,6 +51,7 @@ function handleSubmit(e){
     closeModal()
     handlePage()
     rotateCard()
+    save()
 }
 
 function closeModal(){
@@ -93,6 +100,14 @@ function initCards(){
     handlePage();
     cardContent.innerHTML = "카드를 추가해보세요!";
     riorContent.innerHTML = "뒷면입니다";
+    save()
+}
+
+function checkStatus(){
+    if(cardIndex > 0){
+        nextCard()
+        rotateCard()
+    }
 }
 
 function init(){
@@ -101,7 +116,8 @@ function init(){
     handlePage();
     preCardBtn.addEventListener("click", preCard);
     nextCardBtn.addEventListener("click", nextCard);
-    clearBtn.addEventListener("click", initCards)
+    clearBtn.addEventListener("click", initCards);
+    checkStatus()
 }
 
 init();
