@@ -36,6 +36,21 @@ body{
     width: 500px;
     height: 300px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-back{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transform: rotateX(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card_ctr{
@@ -119,6 +134,10 @@ footer{
     top: 30px;
 }
 
+.card-content_rior{
+    display: none;
+}
+
 @keyframes showWindow{
     0%{
         opacity: 0;
@@ -136,5 +155,20 @@ footer{
     100%{
         opacity: 0;
         z-index: -1;
+    }
+}
+
+@keyframes rotateCard{
+    100%{
+        transform: rotateX(180deg)
+    }
+}
+
+@keyframes rotateCard2{
+    0%{
+        transform: rotateX(180deg)
+    }
+    100%{
+        transform: rotateX(0deg);
     }
 }

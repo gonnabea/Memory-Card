@@ -13,7 +13,12 @@
                 <h1 class="title">기억 카드</h1>
                 <button class="add-card-btn" id="addCardBtn">+ 새로운 카드 추가</button>
             </header>
-            <div class="card"></div>
+            <div class="card" id="card">
+                <span class="card-content" id="cardContent"></span>
+                <div class="card-back" id="cardBack">
+                    <span class="card-content_rior" id="riorContent"></span>
+                </div>
+            </div>
             <div class="card_ctr">
                 <span class="ctr_pre"><-</span>
                 <span class="page">0/0</span>
@@ -32,9 +37,9 @@
             </header>
             <form action="" class="add-form" id="addForm">
                 <h2 class="question">질문</h2>
-                <input type="text" class="modal-input" id="inputQ">
+                <input type="text" class="modal-input" id="inputQ" required=true>
                 <h3 class="answer">답</h3>
-                <input type="text" class="modal-input" id="inputA">
+                <input type="text" class="modal-input" id="inputA" required=true>
                 <input type="submit" value="+ 카드 추가" class="modal-submit" id="modalSubmit"> 
             </form>
         </section>
