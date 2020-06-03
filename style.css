@@ -135,8 +135,13 @@ footer{
     top: 30px;
 }
 
+.card-content{
+    font-size: 30px;
+}
+
 .card-content_rior{
     display: none;
+    font-size: 30px;
 }
 
 .ctr{
