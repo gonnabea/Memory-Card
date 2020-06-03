@@ -11,7 +11,8 @@ addForm = document.getElementById("addForm"),
 riorContent = document.getElementById("riorContent"),
 page = document.getElementById("page"),
 preCardBtn = document.getElementById("preCardBtn"),
-nextCardBtn = document.getElementById("nextCardBtn")
+nextCardBtn = document.getElementById("nextCardBtn"),
+clearBtn = document.getElementById("clearBtn")
 
 let frontContents = [];
 let backContents = [];
@@ -38,6 +39,8 @@ function handleSubmit(e){
         currentIndex +=1;
         cardContent.innerHTML = frontContents[cardIndex-1];
         riorContent.innerHTML = backContents[cardIndex-1];
+    }else{
+        currentIndex = 1;
     }
     closeModal()
     handlePage()
@@ -82,12 +85,23 @@ function preCard(){
     }
 }
 
+function initCards(){
+    frontContents = [];
+    backContents = [];
+    cardIndex = 0;
+    currentIndex = 0;
+    handlePage();
+    cardContent.innerHTML = "카드를 추가해보세요!";
+    riorContent.innerHTML = "뒷면입니다";
+}
+
 function init(){
     addCardBtn.addEventListener("click", showModal);
     card.addEventListener("click", rotateCard);
     handlePage();
     preCardBtn.addEventListener("click", preCard);
-    nextCardBtn.addEventListener("click", nextCard)
+    nextCardBtn.addEventListener("click", nextCard);
+    clearBtn.addEventListener("click", initCards)
 }
 
 init();
