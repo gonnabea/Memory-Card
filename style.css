@@ -138,6 +138,10 @@ footer{
     display: none;
 }
 
+.ctr{
+    cursor: pointer;
+}
+
 @keyframes showWindow{
     0%{
         opacity: 0;
